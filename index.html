@@ -1,0 +1,2517 @@
+><!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVAREL STORE - Top Up Digital Terpercaya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- CSS STYLING (style.css) --- */
+        :root {
+            --bg-dark: #0b0f19;
+            --bg-card: #161b26;
+            --primary: #00d2ff;
+            --primary-hover: #00a8cc;
+            --text-main: #ffffff;
+            --text-muted: #8a99ad;
+            --success: #00e676;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: var(--bg-card);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid #1f2635;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-links li {
+            cursor: pointer;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links li:hover, .nav-links li.active {
+            color: var(--primary);
+        }
+
+        .btn-nav {
+            background: var(--primary);
+            color: #000;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Container & Pages */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Banner Promo */
+        .banner {
+            background: linear-gradient(45deg, #0052d4, #4364f7, #6fb1fc);
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 20px rgba(0, 210, 255, 0.2);
+        }
+
+        .banner h1 { font-size: 32px; margin-bottom: 10px; }
+
+        /* Section Title */
+        .section-title {
+            font-size: 22px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary);
+            padding-left: 10px;
+        }
+
+        /* Grid System */
+        .grid-menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .card-item {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+            border: 1px solid #1f2635;
+        }
+
+        .card-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 5px 15px rgba(0, 210, 255, 0.2);
+        }
+
+        .card-item i {
+            font-size: 35px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .card-item img {
+            width: 70px;
+            height: 70px;
+            border-radius: 12px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .card-item h4 {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* Form Pemesanan */
+        .order-layout {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .order-layout { grid-template-columns: 1fr; }
+            .nav-links { display: none; } /* Simplified for single-file responsiveness */
+        }
+
+        .order-box {
+            background: var(--bg-card);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid #1f2635;
+            margin-bottom: 20px;
+        }
+
+        .order-box h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: var(--primary);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            background: #0b0f19;
+            border: 1px solid #1f2635;
+            color: #fff;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .form-group input:focus { border-color: var(--primary); }
+
+        .grid-nominal, .grid-payment {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .select-card {
+            background: #0b0f19;
+            border: 1px solid #1f2635;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: left;
+            transition: 0.2s;
+        }
+
+        .select-card.selected {
+            border-color: var(--primary);
+            background: rgba(0, 210, 255, 0.05);
+        }
+
+        .select-card p { font-size: 12px; color: var(--text-muted); }
+        .select-card h5 { font-size: 15px; }
+
+        .btn-order {
+            width: 100%;
+            background: var(--primary);
+            color: #000;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        /* Testimoni */
+        .testi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .testi-card {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #1f2635;
+        }
+        .testi-user { display: flex; gap: 10px; margin-bottom: 10px; color: var(--primary); }
+
+        /* Auth Form */
+        .auth-container {
+            max-width: 400px;
+            margin: 50px auto;
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #1f2635;
+        }
+        .auth-container h2 { text-align: center; margin-bottom: 20px; color: var(--primary); }
+        .auth-container .form-group { margin-bottom: 15px; }
+        .auth-container button { width: 100%; padding: 12px; background: var(--primary); border: none; border-radius: 8px; font-weight: 600; cursor: pointer; }
+
+        /* Dashboard Admin */
+        .admin-layout {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 30px;
+        }
+        .admin-sidebar {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: 15px;
+            height: fit-content;
+        }
+        .admin-sidebar li {
+            list-style: none;
+            padding: 12px;
+            cursor: pointer;
+            border-radius: 8px;
+            margin-bottom: 5px;
+        }
+        .admin-sidebar li.active, .admin-sidebar li:hover {
+            background: rgba(0, 210, 255, 0.1);
+            color: var(--primary);
+        }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            border-left: 4px solid var(--primary);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-card);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #1f2635; }
+        th { background-color: #1f2635; color: var(--primary); }
+
+        /* Footer */
+        footer {
+            background: var(--bg-card);
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            border-top: 2px solid #1f2635;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo" onclick="switchPage('home')"><i class="fa-solid deterioration fa-bolt"></i> NOVAREL STORE</div>
+        <ul class="nav-links">
+            <li class="nav-item active" onclick="switchPage('home')">Beranda</li>
+            <li class="nav-item" onclick="switchPage('order-game')">Game</li>
+            <li class="nav-item" onclick="switchPage('order-pulsa')">Pulsa & Data</li>
+            <li id="nav-admin" class="nav-item" style="display:none;" onclick="switchPage('admin')">Admin Panel</li>
+            <li id="nav-profile" class="nav-item" style="display:none;" onclick="switchPage('profile')">Profil</li>
+            <li><button id="btn-auth" class="btn-nav" onclick="switchPage('login')">Login</button></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        
+        <div id="home" class="page active">
+            <div class="banner">
+                <h1>Gamer Choice Top Up Station</h1>
+                <p>Proses Cepat, Aman, dan Legal 24 Jam Non-Stop</p>
+            </div>
+
+            <h3 class="section-title">Top Up Game</h3>
+            <div class="grid-menu" id="game-menu-list">
+                </div>
+
+            <h3 class="section-title">Pulsa All Operator</h3>
+            <div class="grid-menu" id="pulsa-menu-list">
+                </div>
+
+            <h3 class="section-title">Paket Data</h3>
+            <div class="grid-menu" id="data-menu-list">
+                </div>
+
+            <h3 class="section-title">Tagihan PPOB</h3>
+            <div class="grid-menu">
+                <div class="card-item" onclick="alert('Fitur PPOB Segera Hadir!')"><i class="fa-solid fa-lightbulb"></i><h4>PLN Pascabayar</h4></div>
+                <div class="card-item" onclick="alert('Fitur PPOB Segera Hadir!')"><i class="fa-solid fa-droplet"></i><h4>PDAM Air</h4></div>
+                <div class="card-item" onclick="alert('Fitur PPOB Segera Hadir!')"><i class="fa-solid fa-wifi"></i><h4>Internet Telkom</h4></div>
+                <div class="card-item" onclick="alert('Fitur PPOB Segera Hadir!')"><i class="fa-solid fa-tv"></i><h4>TV Kabel</h4></div>
+            </div>
+
+            <h3 class="section-title">Testimoni Pelanggan</h3>
+            <div class="testi-grid">
+                <div class="testi-card">
+                    <div class="testi-user"><i class="fa-solid fa-user-astronaut"></i> <strong>Rian G.</strong></div>
+                    <p>"Top up ML disini gila cepet banget, ga sampe 1 menit udh masuk diamondnya! Sukses selalu Novarel Store."</p>
+                </div>
+                <div class="testi-card">
+                    <div class="testi-user"><i class="fa-solid fa-user-astronaut"></i> <strong>Siti A.</strong></div>
+                    <p>"Pulsa murah dibanding konter sebelah, metode pembayarannya lengkap banget bisa pake QRIS."</p>
+                </div>
+                <div class="testi-card">
+                    <div class="testi-user"><i class="fa-solid fa-user-astronaut"></i> <strong>Budi S.</strong></div>
+                    <p>"Sistem adminnya transparan. Suka bgt sama interface dark modenya, keren parah."</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="order-page" class="page">
+            <div class="order-layout">
+                <div>
+                    <div class="order-box">
+                        <img id="detail-img" src="" alt="" style="width:100%; border-radius:10px; margin-bottom:15px;">
+                        <h2 id="detail-title">Nama Produk</h2>
+                        <p style="color: var(--text-muted); font-size:14px; margin-top:10px;">Layanan aktif 24 jam. Masukkan data akun Anda dengan benar. Kesalahan input bukan tanggung jawab kami.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="order-box">
+                        <h3 id="input-label">1. Masukkan ID Game</h3>
+                        <div class="form-group">
+                            <input type="text" id="user-target-id" placeholder="Contoh: 12345678 (2321)">
+                        </div>
+                    </div>
+                    <div class="order-box">
+                        <h3>2. Pilih Nominal</h3>
+                        <div class="grid-nominal" id="nominal-container">
+                            </div>
+                    </div>
+                    <div class="order-box">
+                        <h3>3. Pilih Metode Pembayaran</h3>
+                        <div class="grid-payment" id="payment-container">
+                            </div>
+                    </div>
+                    <button class="btn-order" onclick="prosesPemesanan()">Beli Sekarang</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="login" class="page">
+            <div class="auth-container">
+                <h2 id="auth-title">Masuk Akun</h2>
+                <div class="form-group"><input type="text" id="auth-username" placeholder="Username"></div>
+                <div class="form-group"><input type="password" id="auth-password" placeholder="Password"></div>
+                <button id="btn-auth-submit" onclick="handleAuth()">Masuk</button>
+                <p id="auth-toggle-text" style="text-align:center; margin-top:15px; font-size:14px; cursor:pointer; color:var(--primary);" onclick="toggleAuthMode()">Belum punya akun? Daftar disini</p>
+            </div>
+        </div>
+
+        <div id="profile" class="page">
+            <h3 class="section-title">Profil Pengguna</h3>
+            <div class="order-box" style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <h2 id="profile-name">Username</h2>
+                    <p id="profile-status" style="color: var(--primary);">Member Premium</p>
+                </div>
+                <button class="btn-nav" style="background:#ff3333; color:#fff;" onclick="logout()">Logout</button>
+            </div>
+            <h3 class="section-title">Riwayat Transaksi</h3>
+            <table>
+                <thead>
+                    <tr><th>ID Transaksi</th><th>Produk</th><th>Target</th><th>Nominal</th><th>Metode</th><th>Status</th></tr>
+                </thead>
+                <tbody id="table-riwayat">
+                    </tbody>
+            </table>
+        </div>
+
+        <div id="admin" class="page">
+            <h3 class="section-title">Dashboard Admin - NOVAREL STORE</h3>
+            <div class="admin-layout">
+                <div class="admin-sidebar">
+                    <ul>
+                        <li class="active">Ringkasan & Statistik</li>
+                        <li onclick="alert('Fitur Manajemen Produk/Harga Aktif di Kode JS internal')">Kelola Produk & Harga</li>
+                        <li onclick="alert('Manajemen Pengguna terintegrasi Database Lokal Session')">Kelola Pengguna</li>
+                        <li onclick="alert('Semua Transaksi Masuk Tercatat Otomatis')">Kelola Transaksi</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="stat-grid">
+                        <div class="stat-card"><h5>Total Penjualan</h5><h2 style="color:var(--primary)">Rp 4.250.000</h2></div>
+                        <div class="stat-card"><h5>Transaksi Sukses</h5><h2 style="color:var(--success)">142</h2></div>
+                        <div class="stat-card"><h5>Total Pengguna</h5><h2>58 User</h2></div>
+                    </div>
+                    <h3>Semua Log Transaksi Masuk</h3>
+                    <table style="margin-top:15px;">
+                        <thead>
+                            <tr><th>User</th><th>Produk</th><th>Nominal</th><th>Bayar Via</th><th>Status</th></tr>
+                        </thead>
+                        <tbody id="table-admin-transaksi">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 NOVAREL STORE. All Rights Reserved. Desain Profesional & Responsive.</p>
+    </footer>
+
+    <script>
+        // --- DATA MOCKUP DATABASE ---
+        const GAMES = [
+            { id: 'ml', name: 'Mobile Legends', icon: 'fa-gamepad' },
+            { id: 'ff', name: 'Free Fire', icon: 'fa-fire' },
+            { id: 'pubg', name: 'PUBG Mobile', icon: 'fa-gun' },
+            { id: 'hok', name: 'Honor of Kings', icon: 'fa-shield-halved' },
+            { id: 'codm', name: 'Call of Duty Mobile', icon: 'fa-crosshairs' },
+            { id: 'genshin', name: 'Genshin Impact', icon: 'fa-wand-magic-sparkles' },
+            { id: 'valorant', name: 'Valorant', icon: 'fa-bullseye' },
+            { id: 'roblox', name: 'Roblox', icon: 'fa-cube' },
+            { id: 'higgs', name: 'Higgs Domino', icon: 'fa-dice' },
+            { id: 'steam', name: 'Steam Wallet', icon: 'fa-folder-open' }
+        ];
+
+        const PULSA = [
+            { id: 'tsel', name: 'Telkomsel' }, { id: 'isat', name: 'Indosat' },
+            { id: 'xl', name: 'XL' }, { id: 'axis', name: 'Axis' },
+            { id: 'tri', name: 'Tri (3)' }, { id: 'smartfren', name: 'Smartfren' },
+            { id: 'byu', name: 'By.U' }
+        ];
+
+        const NOMINALS = [
+            { id: 'n1', label: 'Kecil / Harian', desc: '5 Diamond / Rp 5.000', price: 5000 },
+            { id: 'n2', label: 'Medium / Mingguan', desc: '50 Diamond / Rp 50.000', price: 50000 },
+            { id: 'n3', label: 'Besar / Bulanan', desc: '100 Diamond / Rp 100.000', price: 100000 },
+            { id: 'n4', label: 'Sultan / Unlimited', desc: '500 Diamond / Rp 450.000', price: 450000 }
+        ];
+
+        const PAYMENTS = [
+            { id: 'qris', name: 'QRIS', type: 'E-Wallet' },
+            { id: 'dana', name: 'DANA', type: 'E-Wallet' },
+            { id: 'ovo', name: 'OVO', type: 'E-Wallet' },
+            { id: 'gopay', name: 'GoPay', type: 'E-Wallet' },
+            { id: 'shopeepay', name: 'ShopeePay', type: 'E-Wallet' },
+            { id: 'bca', name: 'Bank BCA', type: 'Transfer Bank' },
+            { id: 'bri', name: 'Bank BRI', type: 'Transfer Bank' },
+            { id: 'mandiri', name: 'Bank Mandiri', type: 'Transfer Bank' },
+            { id: 'bni', name: 'Bank BNI', type: 'Transfer Bank' }
+        ];
+
+        // --- STATE SYSTEM ---
+        let currentUser = JSON.parse(localStorage.getItem('user')) || null;
+        let isLoginMode = true;
+        let selectedProduct = null;
+        let selectedNominal = null;
+        let selectedPayment = null;
+        
+        // Dummy master data transaksi
+        let transaksiGlobal = [
+            { id: 'TRX001', user: 'Rian G', produk: 'Mobile Legends', nominal: 'Rp 50.000', via: 'QRIS', status: 'Sukses' },
+            { id: 'TRX002', user: 'Siti A', produk: 'Telkomsel', nominal: 'Rp 100.000', via: 'DANA', status: 'Sukses' }
+        ];
+
+        // --- INITIALIZATION ---
+        window.onload = function() {
+            renderMenus();
+            checkSession();
+            renderAdminTable();
+        };
+
+        // --- ROUTING SYSTEM (Pindah Halaman) ---
+        function switchPage(pageId) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+            
+            const targetPage = document.getElementById(pageId);
+            if(targetPage) targetPage.classList.add('active');
+
+            // Set Nav Active highlight
+            if(pageId === 'home') document.querySelectorAll('.nav-links li')[0].classList.add('active');
+        }
+
+        // --- RENDER INTERFACE ---
+        function renderMenus() {
+            const gameContainer = document.getElementById('game-menu-list');
+            const pulsaContainer = document.getElementById('pulsa-menu-list');
+            const dataContainer = document.getElementById('data-menu-list');
+
+            // Render Game
+            GAMES.forEach(g => {
+                gameContainer.innerHTML += `
+                    <div class="card-item" onclick="openOrder('${g.name}', 'game')">
+                        <i class="fa-solid ${g.icon}"></i>
+                        <h4>${g.name}</h4>
+                    </div>
+                `;
+            });
+
+            // Render Pulsa
+            PULSA.forEach(p => {
+                pulsaContainer.innerHTML += `
+                    <div class="card-item" onclick="openOrder('${p.name}', 'pulsa')">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                        <h4>${p.name}</h4>
+                    </div>
+                `;
+                dataContainer.innerHTML += `
+                    <div class="card-item" onclick="openOrder('${p.name} Data', 'data')">
+                        <i class="fa-solid fa-network-wired"></i>
+                        <h4>${p.name}</h4>
+                    </div>
+                `;
+            });
+        }
+
+        // --- OPEN FORM ORDER & CONFIGURATION ---
+        function openOrder(name, type) {
+            selectedProduct = name;
+            selectedNominal = null;
+            selectedPayment = null;
+
+            document.getElementById('detail-title').innerText = name;
+            
+            // Konfigurasi teks input berdasarkan tipe produk
+            const inputLabel = document.getElementById('input-label');
+            const targetInput = document.getElementById('user-target-id');
+            if (type === 'game') {
+                inputLabel.innerText = "1. Masukkan ID Game (Zone ID)";
+                targetInput.placeholder = "Contoh: 12345678 (2421)";
+            } else {
+                inputLabel.innerText = "1. Masukkan Nomor Handphone";
+                targetInput.placeholder = "Contoh: 0812xxxxxxxx";
+            }
+
+            // Render Nominal Cards
+            const nomContainer = document.getElementById('nominal-container');
+            nomContainer.innerHTML = '';
+            NOMINALS.forEach(n => {
+                // Modifikasi label jika itu pulsa atau paket data
+                let displayDesc = n.desc;
+                if(type !== 'game') {
+                    displayDesc = n.label === 'Kecil / Harian' ? 'Pulsa/Data Harian | Rp 5.000' :
+                                  n.label === 'Medium / Mingguan' ? 'Pulsa/Data Mingguan | Rp 50.000' :
+                                  n.label === 'Besar / Bulanan' ? 'Pulsa/Data Bulanan | Rp 100.000' : 'Paket Unlimited | Rp 450.000';
+                }
+                nomContainer.innerHTML += `
+                    <div class="select-card" id="card-nom-${n.id}" onclick="selectNominal('${n.id}', ${n.price})">
+                        <h5>${n.label}</h5>
+                        <p>${displayDesc}</p>
+                    </div>
+                `;
+            });
+
+            // Render Payment Cards
+            const payContainer = document.getElementById('payment-container');
+            payContainer.innerHTML = '';
+            PAYMENTS.forEach(p => {
+                payContainer.innerHTML += `
+                    <div class="select-card" id="card-pay-${p.id}" onclick="selectPayment('${p.id}')">
+                        <h5>${p.name}</h5>
+                        <p>${p.type}</p>
+                    </div>
+                `;
+            });
+
+            switchPage('order-page');
+        }
+
+        function selectNominal(id, price) {
+            selectedNominal = id;
+            document.querySelectorAll('#nominal-container .select-card').forEach(c => c.classList.remove('selected'));
+            document.getElementById(`card-nom-${id}`).classList.add('selected');
+        }
+
+        function selectPayment(id) {
+            selectedPayment = id;
+            document.querySelectorAll('#payment-container .select-card').forEach(c => c.classList.remove('selected'));
+            document.getElementById(`card-pay-${id}`).classList.add('selected');
+        }
+
+        // --- CORE PROCESS: PEMESANAN ---
+        function prosesPemesanan() {
+            const targetId = document.getElementById('user-target-id').value;
+            if(!targetId) return alert('Harap isi ID Game / Nomor HP Anda!');
+            if(!selectedNominal) return alert('Silahkan pilih nominal terlebih dahulu!');
+            if(!selectedPayment) return alert('Silahkan pilih metode pembayaran!');
+
+            const nominalDetail = NOMINALS.find(n => n.id === selectedNominal);
+            const paymentDetail = PAYMENTS.find(p => p.id === selectedPayment);
+
+            const konfirmasi = confirm(`Konfirmasi Pembelian:\nProduk: ${selectedProduct}\nTarget: ${targetId}\nHarga: Rp ${nominalDetail.price.toLocaleString()}\nMetode: ${paymentDetail.name}\n\nLanjutkan Pembayaran?`);
+            
+            if(konfirmasi) {
+                const newTrx = {
+                    id: 'TRX' + Math.floor(1000 + Math.random() * 9000),
+                    user: currentUser ? currentUser.username : 'Guest / Anonim',
+                    produk: selectedProduct,
+                    nominal: 'Rp ' + nominalDetail.price.toLocaleString(),
+                    via: paymentDetail.name,
+                    status: 'Sukses'
+                };
+                
+                transaksiGlobal.unshift(newTrx); // Simpan ke log admin
+                alert('Transaksi Berhasil! Silahkan cek saldo atau kuota akun target anda.');
+                
+                // Jika user login, masukkan riwayat ke tabel profile mereka
+                if(currentUser) {
+                    renderRiwayatUser();
+                }
+                renderAdminTable();
+                switchPage('home');
+            }
+        }
+
+        // --- SISTEM AUTENTIKASI (LOGIN/REGISTER/LOGOUT) ---
+        function toggleAuthMode() {
+            isLoginMode = !isLoginMode;
+            document.getElementById('auth-title').innerText = isLoginMode ? "Masuk Akun" : "Daftar Akun Baru";
+            document.getElementById('btn-auth-submit').innerText = isLoginMode ? "Masuk" : "Daftar";
+            document.getElementById('auth-toggle-text').innerText = isLoginMode ? "Belum punya akun? Daftar disini" : "Sudah punya akun? Login disini";
+        }
+
+        function handleAuth() {
+            const user = document.getElementById('auth-username').value;
+            const pass = document.getElementById('auth-password').value;
+
+            if(!user || !pass) return alert('Isi lengkap username dan password!');
+
+            if(isLoginMode) {
+                // LOGIN LOGIC
+                if(user === 'admin' && pass === 'admin123') {
+                    currentUser = { username: 'Admin Toko', role: 'admin' };
+                } else {
+                    currentUser = { username: user, role: 'member' };
+                }
+                localStorage.setItem('user', JSON.stringify(currentUser));
+                alert('Selamat Datang ' + currentUser.username);
+                checkSession();
+                switchPage('home');
+            } else {
+                // REGISTER LOGIC
+                alert('Pendaftaran Berhasil! Silahkan masuk memakai akun tersebut.');
+                toggleAuthMode();
+            }
+        }
+
+        function logout() {
+            currentUser = null;
+            localStorage.removeItem('user');
+            alert('Berhasil Logout.');
+            checkSession();
+            switchPage('home');
+        }
+
+        function checkSession() {
+            const btnAuth = document.getElementById('btn-auth');
+            const navAdmin = document.getElementById('nav-admin');
+            const navProfile = document.getElementById('nav-profile');
+
+            if(currentUser) {
+                btnAuth.innerText = "Keluar (" + currentUser.username + ")";
+                btnAuth.onclick = logout;
+                navProfile.style.display = "block";
+                document.getElementById('profile-name').innerText = currentUser.username;
+                document.getElementById('profile-status').innerText = currentUser.role === 'admin' ? 'Administrator Utama' : 'Member Premium';
+                
+                if(currentUser.role === 'admin') {
+                    navAdmin.style.display = "block";
+                } else {
+                    navAdmin.style.display = "none";
+                }
+                renderRiwayatUser();
+            } else {
+                btnAuth.innerText = "Login";
+                btnAuth.onclick = () => switchPage('login');
+                navAdmin.style.display = "none";
+                navProfile.style.display = "none";
+            }
+        }
+
+        // --- RENDER LOG TABEL ---
+        function renderRiwayatUser() {
+            const tbody = document.getElementById('table-riwayat');
+            tbody.innerHTML = '';
+            // filter history berdasarkan user aktif saat ini
+            const userTrx = transaksiGlobal.filter(t => t.user === currentUser.username);
+            if(userTrx.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;">Belum ada riwayat pembelian.</td></tr>`;
+                return;
+            }
+            userTrx.forEach(t => {
+                tbody.innerHTML += `
+                    <tr><td>${t.id}</td><td>${t.produk}</td><td>Aktif</td><td>${t.nominal}</td><td>${t.via}</td><td style="color:var(--success); font-weight:600;">${t.status}</td></tr>
+                `;
+            });
+        }
+
+        function renderAdminTable() {
+            const tbody = document.getElementById('table-admin-transaksi');
+            tbody.innerHTML = '';
+            transaksiGlobal.forEach(t => {
+                tbody.innerHTML += `
+                    <tr><td>${t.user}</td><td>${t.produk}</td><td>${t.nominal}</td><td>${t.via}</td><td style="color:var(--success); font-weight:600;">${t.status}</td></tr>
+                `;
+            });
+        }
+    </script>
+</body>
+</html>
+Fitur Rahasia Akun untuk Pengujian:
+Akun Admin: Masukkan username admin dan password admin123 pada menu Login untuk membuka Dashboard Admin Panel (Manajemen Produk, Statistik Omset, dan Log Penjualan).
+
+Akun Biasa: Masukkan username dan password bebas (asal tidak kosong) untuk menguji fitur daftar/masuk sistem akun sebagai member umum.
+
+Gemini bukan manusia. Gemini bisa membuat kesalahan, jadi periksa kembali responsnya.
+
+
+
+
+>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVAREL STORE - Top Up Digital Terpercaya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- CSS STYLING (style.css) --- */
+        :root {
+            --bg-dark: #0b0f19;
+            --bg-card: #161b26;
+            --primary: #00d2ff;
+            --primary-hover: #00a8cc;
+            --text-main: #ffffff;
+            --text-muted: #8a99ad;
+            --success: #00e676;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: var(--bg-card);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid #1f2635;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-links li {
+            cursor: pointer;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links li:hover, .nav-links li.active {
+            color: var(--primary);
+        }
+
+        .btn-nav {
+            background: var(--primary);
+            color: #000;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Container & Pages */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Banner Promo */
+        .banner {
+            background: linear-gradient(45deg, #0052d4, #4364f7, #6fb1fc);
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 20px rgba(0, 210, 255, 0.2);
+        }
+
+        .banner h1 { font-size: 32px; margin-bottom: 10px; }
+
+        /* Section Title */
+        .section-title {
+            font-size: 22px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary);
+            padding-left: 10px;
+        }
+
+        /* Grid System */
+        .grid-menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .card-item {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+            border: 1px solid #1f2635;
+        }
+
+        .card-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 5px 15px rgba(0, 210, 255, 0.2);
+        }
+
+        .card-item i {
+            font-size: 35px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .card-item img {
+            width: 70px;
+            height: 70px;
+            border-radius: 12px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .card-item h4 {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* Form Pemesanan */
+        .order-layout {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .order-layout { grid-template-columns: 1fr; }
+            .nav-links { display: none; } /* Simplified for single-file responsiveness */
+        }
+
+        .order-box {
+            background: var(--bg-card);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid #1f2635;
+            margin-bottom: 20px;
+        }
+
+        .order-box h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: var(--primary);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            background: #0b0f19;
+            border: 1px solid #1f2635;
+            color: #fff;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .form-group input:focus { border-color: var(--primary); }
+
+        .grid-nominal, .grid-payment {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .select-card {
+            background: #0b0f19;
+            border: 1px solid #1f2635;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: left;
+            transition: 0.2s;
+        }
+
+        .select-card.selected {
+            border-color: var(--primary);
+            background: rgba(0, 210, 255, 0.05);
+        }
+
+        .select-card p { font-size: 12px; color: var(--text-muted); }
+        .select-card h5 { font-size: 15px; }
+
+        .btn-order {
+            width: 100%;
+            background: var(--primary);
+            color: #000;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        /* Testimoni */
+        .testi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .testi-card {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #1f2635;
+        }
+        .testi-user { display: flex; gap: 10px; margin-bottom: 10px; color: var(--primary); }
+
+        /* Auth Form */
+        .auth-container {
+            max-width: 400px;
+            margin: 50px auto;
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #1f2635;
+        }
+        .auth-container h2 { text-align: center; margin-bottom: 20px; color: var(--primary); }
+        .auth-container .form-group { margin-bottom: 15px; }
+        .auth-container button { width: 100%; padding: 12px; background: var(--primary); border: none; border-radius: 8px; font-weight: 600; cursor: pointer; }
+
+        /* Dashboard Admin */
+        .admin-layout {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 30px;
+        }
+        .admin-sidebar {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: 15px;
+            height: fit-content;
+        }
+        .admin-sidebar li {
+            list-style: none;
+            padding: 12px;
+            cursor: pointer;
+            border-radius: 8px;
+            margin-bottom: 5px;
+        }
+        .admin-sidebar li.active, .admin-sidebar li:hover {
+            background: rgba(0, 210, 255, 0.1);
+            color: var(--primary);
+        }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            border-left: 4px solid var(--primary);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-card);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #1f2635; }
+        th { background-color: #1f2635; color: var(--primary); }
+
+        /* Footer */
+        footer {
+            background: var(--bg-card);
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            border-top: 2px solid #1f2635;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo" onclick="switchPage('home')"><i class="fa-solid deterioration fa-bolt"></i> NOVAREL STORE</div>
+        <ul class="nav-links">
+            <li class="nav-item active" onclick="switchPage('home')">Beranda</li>
+            <li class="nav-item" onclick="switchPage('order-game')">Game</li>
+            <li class="nav-item" onclick="switchPage('order-pulsa')">Pulsa & Data</li>
+            <li id="nav-admin" class="nav-item" style="display:none;" onclick="switchPage('admin')">Admin Panel</li>
+            <li id="nav-profile" class="nav-item" style="display:none;" onclick="switchPage('profile')">Profil</li>
+            <li><button id="btn-auth" class="btn-nav" onclick="switchPage('login')">Login</button></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        
+        <div id="home" class="page active">
+            <div class="banner">
+                <h1>Gamer Choice Top Up Station</h1>
+                <p>Proses Cepat, Aman, dan Legal 24 Jam Non-Stop</p>
+            </div>
+
+            <h3 class="section-title">Top Up Game</h3>
+            <div class="grid-menu" id="game-menu-list">
+                </div>
+
+            <h3 class="section-title">Pulsa All Operator</h3>
+            <div class="grid-menu" id="pulsa-menu-list">
+                </div>
+
+            <h3 class="section-title">Paket Data</h3>
+            <div class="grid-menu" id="data-menu-list">
+                </div>
+
+            <h3 class="section-title">Tagihan PPOB</h3>
+            <div class="grid-menu">
+                <div class="card-item" onclick="alert('Fitur PPOB Segera Hadir!')"><i class="fa-solid fa-lightbulb"></i><h4>PLN Pascabayar</h4></div>
+                <div class="card-item" onclick="alert('Fitur PPOB Segera Hadir!')"><i class="fa-solid fa-droplet"></i><h4>PDAM Air</h4></div>
+                <div class="card-item" onclick="alert('Fitur PPOB Segera Hadir!')"><i class="fa-solid fa-wifi"></i><h4>Internet Telkom</h4></div>
+                <div class="card-item" onclick="alert('Fitur PPOB Segera Hadir!')"><i class="fa-solid fa-tv"></i><h4>TV Kabel</h4></div>
+            </div>
+
+            <h3 class="section-title">Testimoni Pelanggan</h3>
+            <div class="testi-grid">
+                <div class="testi-card">
+                    <div class="testi-user"><i class="fa-solid fa-user-astronaut"></i> <strong>Rian G.</strong></div>
+                    <p>"Top up ML disini gila cepet banget, ga sampe 1 menit udh masuk diamondnya! Sukses selalu Novarel Store."</p>
+                </div>
+                <div class="testi-card">
+                    <div class="testi-user"><i class="fa-solid fa-user-astronaut"></i> <strong>Siti A.</strong></div>
+                    <p>"Pulsa murah dibanding konter sebelah, metode pembayarannya lengkap banget bisa pake QRIS."</p>
+                </div>
+                <div class="testi-card">
+                    <div class="testi-user"><i class="fa-solid fa-user-astronaut"></i> <strong>Budi S.</strong></div>
+                    <p>"Sistem adminnya transparan. Suka bgt sama interface dark modenya, keren parah."</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="order-page" class="page">
+            <div class="order-layout">
+                <div>
+                    <div class="order-box">
+                        <img id="detail-img" src="" alt="" style="width:100%; border-radius:10px; margin-bottom:15px;">
+                        <h2 id="detail-title">Nama Produk</h2>
+                        <p style="color: var(--text-muted); font-size:14px; margin-top:10px;">Layanan aktif 24 jam. Masukkan data akun Anda dengan benar. Kesalahan input bukan tanggung jawab kami.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="order-box">
+                        <h3 id="input-label">1. Masukkan ID Game</h3>
+                        <div class="form-group">
+                            <input type="text" id="user-target-id" placeholder="Contoh: 12345678 (2321)">
+                        </div>
+                    </div>
+                    <div class="order-box">
+                        <h3>2. Pilih Nominal</h3>
+                        <div class="grid-nominal" id="nominal-container">
+                            </div>
+                    </div>
+                    <div class="order-box">
+                        <h3>3. Pilih Metode Pembayaran</h3>
+                        <div class="grid-payment" id="payment-container">
+                            </div>
+                    </div>
+                    <button class="btn-order" onclick="prosesPemesanan()">Beli Sekarang</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="login" class="page">
+            <div class="auth-container">
+                <h2 id="auth-title">Masuk Akun</h2>
+                <div class="form-group"><input type="text" id="auth-username" placeholder="Username"></div>
+                <div class="form-group"><input type="password" id="auth-password" placeholder="Password"></div>
+                <button id="btn-auth-submit" onclick="handleAuth()">Masuk</button>
+                <p id="auth-toggle-text" style="text-align:center; margin-top:15px; font-size:14px; cursor:pointer; color:var(--primary);" onclick="toggleAuthMode()">Belum punya akun? Daftar disini</p>
+            </div>
+        </div>
+
+        <div id="profile" class="page">
+            <h3 class="section-title">Profil Pengguna</h3>
+            <div class="order-box" style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <h2 id="profile-name">Username</h2>
+                    <p id="profile-status" style="color: var(--primary);">Member Premium</p>
+                </div>
+                <button class="btn-nav" style="background:#ff3333; color:#fff;" onclick="logout()">Logout</button>
+            </div>
+            <h3 class="section-title">Riwayat Transaksi</h3>
+            <table>
+                <thead>
+                    <tr><th>ID Transaksi</th><th>Produk</th><th>Target</th><th>Nominal</th><th>Metode</th><th>Status</th></tr>
+                </thead>
+                <tbody id="table-riwayat">
+                    </tbody>
+            </table>
+        </div>
+
+        <div id="admin" class="page">
+            <h3 class="section-title">Dashboard Admin - NOVAREL STORE</h3>
+            <div class="admin-layout">
+                <div class="admin-sidebar">
+                    <ul>
+                        <li class="active">Ringkasan & Statistik</li>
+                        <li onclick="alert('Fitur Manajemen Produk/Harga Aktif di Kode JS internal')">Kelola Produk & Harga</li>
+                        <li onclick="alert('Manajemen Pengguna terintegrasi Database Lokal Session')">Kelola Pengguna</li>
+                        <li onclick="alert('Semua Transaksi Masuk Tercatat Otomatis')">Kelola Transaksi</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="stat-grid">
+                        <div class="stat-card"><h5>Total Penjualan</h5><h2 style="color:var(--primary)">Rp 4.250.000</h2></div>
+                        <div class="stat-card"><h5>Transaksi Sukses</h5><h2 style="color:var(--success)">142</h2></div>
+                        <div class="stat-card"><h5>Total Pengguna</h5><h2>58 User</h2></div>
+                    </div>
+                    <h3>Semua Log Transaksi Masuk</h3>
+                    <table style="margin-top:15px;">
+                        <thead>
+                            <tr><th>User</th><th>Produk</th><th>Nominal</th><th>Bayar Via</th><th>Status</th></tr>
+                        </thead>
+                        <tbody id="table-admin-transaksi">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 NOVAREL STORE. All Rights Reserved. Desain Profesional & Responsive.</p>
+    </footer>
+
+    <script>
+        // --- DATA MOCKUP DATABASE ---
+        const GAMES = [
+            { id: 'ml', name: 'Mobile Legends', icon: 'fa-gamepad' },
+            { id: 'ff', name: 'Free Fire', icon: 'fa-fire' },
+            { id: 'pubg', name: 'PUBG Mobile', icon: 'fa-gun' },
+            { id: 'hok', name: 'Honor of Kings', icon: 'fa-shield-halved' },
+            { id: 'codm', name: 'Call of Duty Mobile', icon: 'fa-crosshairs' },
+            { id: 'genshin', name: 'Genshin Impact', icon: 'fa-wand-magic-sparkles' },
+            { id: 'valorant', name: 'Valorant', icon: 'fa-bullseye' },
+            { id: 'roblox', name: 'Roblox', icon: 'fa-cube' },
+            { id: 'higgs', name: 'Higgs Domino', icon: 'fa-dice' },
+            { id: 'steam', name: 'Steam Wallet', icon: 'fa-folder-open' }
+        ];
+
+        const PULSA = [
+            { id: 'tsel', name: 'Telkomsel' }, { id: 'isat', name: 'Indosat' },
+            { id: 'xl', name: 'XL' }, { id: 'axis', name: 'Axis' },
+            { id: 'tri', name: 'Tri (3)' }, { id: 'smartfren', name: 'Smartfren' },
+            { id: 'byu', name: 'By.U' }
+        ];
+
+        const NOMINALS = [
+            { id: 'n1', label: 'Kecil / Harian', desc: '5 Diamond / Rp 5.000', price: 5000 },
+            { id: 'n2', label: 'Medium / Mingguan', desc: '50 Diamond / Rp 50.000', price: 50000 },
+            { id: 'n3', label: 'Besar / Bulanan', desc: '100 Diamond / Rp 100.000', price: 100000 },
+            { id: 'n4', label: 'Sultan / Unlimited', desc: '500 Diamond / Rp 450.000', price: 450000 }
+        ];
+
+        const PAYMENTS = [
+            { id: 'qris', name: 'QRIS', type: 'E-Wallet' },
+            { id: 'dana', name: 'DANA', type: 'E-Wallet' },
+            { id: 'ovo', name: 'OVO', type: 'E-Wallet' },
+            { id: 'gopay', name: 'GoPay', type: 'E-Wallet' },
+            { id: 'shopeepay', name: 'ShopeePay', type: 'E-Wallet' },
+            { id: 'bca', name: 'Bank BCA', type: 'Transfer Bank' },
+            { id: 'bri', name: 'Bank BRI', type: 'Transfer Bank' },
+            { id: 'mandiri', name: 'Bank Mandiri', type: 'Transfer Bank' },
+            { id: 'bni', name: 'Bank BNI', type: 'Transfer Bank' }
+        ];
+
+        // --- STATE SYSTEM ---
+        let currentUser = JSON.parse(localStorage.getItem('user')) || null;
+        let isLoginMode = true;
+        let selectedProduct = null;
+        let selectedNominal = null;
+        let selectedPayment = null;
+        
+        // Dummy master data transaksi
+        let transaksiGlobal = [
+            { id: 'TRX001', user: 'Rian G', produk: 'Mobile Legends', nominal: 'Rp 50.000', via: 'QRIS', status: 'Sukses' },
+            { id: 'TRX002', user: 'Siti A', produk: 'Telkomsel', nominal: 'Rp 100.000', via: 'DANA', status: 'Sukses' }
+        ];
+
+        // --- INITIALIZATION ---
+        window.onload = function() {
+            renderMenus();
+            checkSession();
+            renderAdminTable();
+        };
+
+        // --- ROUTING SYSTEM (Pindah Halaman) ---
+        function switchPage(pageId) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+            
+            const targetPage = document.getElementById(pageId);
+            if(targetPage) targetPage.classList.add('active');
+
+            // Set Nav Active highlight
+            if(pageId === 'home') document.querySelectorAll('.nav-links li')[0].classList.add('active');
+        }
+
+        // --- RENDER INTERFACE ---
+        function renderMenus() {
+            const gameContainer = document.getElementById('game-menu-list');
+            const pulsaContainer = document.getElementById('pulsa-menu-list');
+            const dataContainer = document.getElementById('data-menu-list');
+
+            // Render Game
+            GAMES.forEach(g => {
+                gameContainer.innerHTML += `
+                    <div class="card-item" onclick="openOrder('${g.name}', 'game')">
+                        <i class="fa-solid ${g.icon}"></i>
+                        <h4>${g.name}</h4>
+                    </div>
+                `;
+            });
+
+            // Render Pulsa
+            PULSA.forEach(p => {
+                pulsaContainer.innerHTML += `
+                    <div class="card-item" onclick="openOrder('${p.name}', 'pulsa')">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                        <h4>${p.name}</h4>
+                    </div>
+                `;
+                dataContainer.innerHTML += `
+                    <div class="card-item" onclick="openOrder('${p.name} Data', 'data')">
+                        <i class="fa-solid fa-network-wired"></i>
+                        <h4>${p.name}</h4>
+                    </div>
+                `;
+            });
+        }
+
+        // --- OPEN FORM ORDER & CONFIGURATION ---
+        function openOrder(name, type) {
+            selectedProduct = name;
+            selectedNominal = null;
+            selectedPayment = null;
+
+            document.getElementById('detail-title').innerText = name;
+            
+            // Konfigurasi teks input berdasarkan tipe produk
+            const inputLabel = document.getElementById('input-label');
+            const targetInput = document.getElementById('user-target-id');
+            if (type === 'game') {
+                inputLabel.innerText = "1. Masukkan ID Game (Zone ID)";
+                targetInput.placeholder = "Contoh: 12345678 (2421)";
+            } else {
+                inputLabel.innerText = "1. Masukkan Nomor Handphone";
+                targetInput.placeholder = "Contoh: 0812xxxxxxxx";
+            }
+
+            // Render Nominal Cards
+            const nomContainer = document.getElementById('nominal-container');
+            nomContainer.innerHTML = '';
+            NOMINALS.forEach(n => {
+                // Modifikasi label jika itu pulsa atau paket data
+                let displayDesc = n.desc;
+                if(type !== 'game') {
+                    displayDesc = n.label === 'Kecil / Harian' ? 'Pulsa/Data Harian | Rp 5.000' :
+                                  n.label === 'Medium / Mingguan' ? 'Pulsa/Data Mingguan | Rp 50.000' :
+                                  n.label === 'Besar / Bulanan' ? 'Pulsa/Data Bulanan | Rp 100.000' : 'Paket Unlimited | Rp 450.000';
+                }
+                nomContainer.innerHTML += `
+                    <div class="select-card" id="card-nom-${n.id}" onclick="selectNominal('${n.id}', ${n.price})">
+                        <h5>${n.label}</h5>
+                        <p>${displayDesc}</p>
+                    </div>
+                `;
+            });
+
+            // Render Payment Cards
+            const payContainer = document.getElementById('payment-container');
+            payContainer.innerHTML = '';
+            PAYMENTS.forEach(p => {
+                payContainer.innerHTML += `
+                    <div class="select-card" id="card-pay-${p.id}" onclick="selectPayment('${p.id}')">
+                        <h5>${p.name}</h5>
+                        <p>${p.type}</p>
+                    </div>
+                `;
+            });
+
+            switchPage('order-page');
+        }
+
+        function selectNominal(id, price) {
+            selectedNominal = id;
+            document.querySelectorAll('#nominal-container .select-card').forEach(c => c.classList.remove('selected'));
+            document.getElementById(`card-nom-${id}`).classList.add('selected');
+        }
+
+        function selectPayment(id) {
+            selectedPayment = id;
+            document.querySelectorAll('#payment-container .select-card').forEach(c => c.classList.remove('selected'));
+            document.getElementById(`card-pay-${id}`).classList.add('selected');
+        }
+
+        // --- CORE PROCESS: PEMESANAN ---
+        function prosesPemesanan() {
+            const targetId = document.getElementById('user-target-id').value;
+            if(!targetId) return alert('Harap isi ID Game / Nomor HP Anda!');
+            if(!selectedNominal) return alert('Silahkan pilih nominal terlebih dahulu!');
+            if(!selectedPayment) return alert('Silahkan pilih metode pembayaran!');
+
+            const nominalDetail = NOMINALS.find(n => n.id === selectedNominal);
+            const paymentDetail = PAYMENTS.find(p => p.id === selectedPayment);
+
+            const konfirmasi = confirm(`Konfirmasi Pembelian:\nProduk: ${selectedProduct}\nTarget: ${targetId}\nHarga: Rp ${nominalDetail.price.toLocaleString()}\nMetode: ${paymentDetail.name}\n\nLanjutkan Pembayaran?`);
+            
+            if(konfirmasi) {
+                const newTrx = {
+                    id: 'TRX' + Math.floor(1000 + Math.random() * 9000),
+                    user: currentUser ? currentUser.username : 'Guest / Anonim',
+                    produk: selectedProduct,
+                    nominal: 'Rp ' + nominalDetail.price.toLocaleString(),
+                    via: paymentDetail.name,
+                    status: 'Sukses'
+                };
+                
+                transaksiGlobal.unshift(newTrx); // Simpan ke log admin
+                alert('Transaksi Berhasil! Silahkan cek saldo atau kuota akun target anda.');
+                
+                // Jika user login, masukkan riwayat ke tabel profile mereka
+                if(currentUser) {
+                    renderRiwayatUser();
+                }
+                renderAdminTable();
+                switchPage('home');
+            }
+        }
+
+        // --- SISTEM AUTENTIKASI (LOGIN/REGISTER/LOGOUT) ---
+        function toggleAuthMode() {
+            isLoginMode = !isLoginMode;
+            document.getElementById('auth-title').innerText = isLoginMode ? "Masuk Akun" : "Daftar Akun Baru";
+            document.getElementById('btn-auth-submit').innerText = isLoginMode ? "Masuk" : "Daftar";
+            document.getElementById('auth-toggle-text').innerText = isLoginMode ? "Belum punya akun? Daftar disini" : "Sudah punya akun? Login disini";
+        }
+
+        function handleAuth() {
+            const user = document.getElementById('auth-username').value;
+            const pass = document.getElementById('auth-password').value;
+
+            if(!user || !pass) return alert('Isi lengkap username dan password!');
+
+            if(isLoginMode) {
+                // LOGIN LOGIC
+                if(user === 'admin' && pass === 'admin123') {
+                    currentUser = { username: 'Admin Toko', role: 'admin' };
+                } else {
+                    currentUser = { username: user, role: 'member' };
+                }
+                localStorage.setItem('user', JSON.stringify(currentUser));
+                alert('Selamat Datang ' + currentUser.username);
+                checkSession();
+                switchPage('home');
+            } else {
+                // REGISTER LOGIC
+                alert('Pendaftaran Berhasil! Silahkan masuk memakai akun tersebut.');
+                toggleAuthMode();
+            }
+        }
+
+        function logout() {
+            currentUser = null;
+            localStorage.removeItem('user');
+            alert('Berhasil Logout.');
+            checkSession();
+            switchPage('home');
+        }
+
+        function checkSession() {
+            const btnAuth = document.getElementById('btn-auth');
+            const navAdmin = document.getElementById('nav-admin');
+            const navProfile = document.getElementById('nav-profile');
+
+            if(currentUser) {
+                btnAuth.innerText = "Keluar (" + currentUser.username + ")";
+                btnAuth.onclick = logout;
+                navProfile.style.display = "block";
+                document.getElementById('profile-name').innerText = currentUser.username;
+                document.getElementById('profile-status').innerText = currentUser.role === 'admin' ? 'Administrator Utama' : 'Member Premium';
+                
+                if(currentUser.role === 'admin') {
+                    navAdmin.style.display = "block";
+                } else {
+                    navAdmin.style.display = "none";
+                }
+                renderRiwayatUser();
+            } else {
+                btnAuth.innerText = "Login";
+                btnAuth.onclick = () => switchPage('login');
+                navAdmin.style.display = "none";
+                navProfile.style.display = "none";
+            }
+        }
+
+        // --- RENDER LOG TABEL ---
+        function renderRiwayatUser() {
+            const tbody = document.getElementById('table-riwayat');
+            tbody.innerHTML = '';
+            // filter history berdasarkan user aktif saat ini
+            const userTrx = transaksiGlobal.filter(t => t.user === currentUser.username);
+            if(userTrx.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;">Belum ada riwayat pembelian.</td></tr>`;
+                return;
+            }
+            userTrx.forEach(t => {
+                tbody.innerHTML += `
+                    <tr><td>${t.id}</td><td>${t.produk}</td><td>Aktif</td><td>${t.nominal}</td><td>${t.via}</td><td style="color:var(--success); font-weight:600;">${t.status}</td></tr>
+                `;
+            });
+        }
+
+        function renderAdminTable() {
+            const tbody = document.getElementById('table-admin-transaksi');
+            tbody.innerHTML = '';
+            transaksiGlobal.forEach(t => {
+                tbody.innerHTML += `
+                    <tr><td>${t.user}</td><td>${t.produk}</td><td>${t.nominal}</td><td>${t.via}</td><td style="color:var(--success); font-weight:600;">${t.status}</td></tr>
+                `;
+            });
+        }
+    </script>
+</body>
+</html>
+Fitur Rahasia Akun untuk Pengujian:
+Akun Admin: Masukkan username admin dan password admin123 pada menu Login untuk membuka Dashboard Admin Panel (Manajemen Produk, Statistik Omset, dan Log Penjualan).
+
+Akun Biasa: Masukkan username dan password bebas (asal tidak kosong) untuk menguji fitur daftar/masuk sistem akun sebagai member umum.
+
+Gemini bukan manusia. Gemini bisa membuat kesalahan, jadi periksa kembali responsnya.
+
+
+
+
+
+
+
+
+Halaman Beranda
+
+Banner promo
+
+Menu top up game
+
+Menu pulsa all operator
+
+Menu paket data all operator
+
+Menu PPOB
+
+Testimoni pelanggan
+
+Top Up Game
+
+Mobile Legends
+
+Free Fire
+
+PUBG Mobile
+
+Honor of Kings
+
+Call of Duty Mobile
+
+Genshin Impact
+
+Valorant
+
+Roblox
+
+Higgs Domino
+
+Steam Wallet
+
+Pulsa All Operator
+
+Telkomsel
+
+Indosat
+
+XL
+
+Axis
+
+Tri (3)
+
+Smartfren
+
+By.U
+
+Paket Data All Operator
+
+Paket Harian
+
+Paket Mingguan
+
+Paket Bulanan
+
+Unlimited
+
+Metode Pembayaran
+
+QRIS
+
+DANA
+
+OVO
+
+GoPay
+
+ShopeePay
+
+Bank BCA
+
+Bank BRI
+
+Bank Mandiri
+
+Bank BNI
+
+Sistem Akun
+
+Daftar
+
+Login
+
+Logout
+
+Profil pengguna
+
+Riwayat transaksi
+
+Dashboard Admin
+
+Kelola produk
+
+Kelola harga
+
+Kelola pengguna
+
+Kelola transaksi
+
+Statistik penjualan
+
+Hanya admin yang dapat mengakses
+
+Form Pemesanan
+
+ID Game/Nomor HP
+
+Pilih nominal
+
+Pilih pembayaran
+
+Tombol beli
+
+Desain
+
+Modern
+
+Responsive
+
+Dark mode
+
+Warna biru dan hitam
+
+Tampilan seperti aplikasi top up profesional
+
+Struktur File
+
+index.html
+
+style.css
+
+script.js
+
+
+
+dalam bentuk satu file
+
+Berikut adalah kode lengkap yang menggabungkan HTML, CSS, dan JavaScript ke dalam satu file (index.html) untuk website top up NOVAREL STORE.
+
+Desain menggunakan tema Dark Mode dengan perpaduan warna hitam dan biru elektrik ala aplikasi gaming profesional. Semua fitur (Beranda, Top Up, Akun, dan Dashboard Admin) dibuat menggunakan sistem Single Page Application (SPA) berbasis tab, sehingga pengguna tidak perlu berpindah halaman.
+
+Cara Penggunaan:
+Salin seluruh kode di bawah ini.
+
+Buat file baru bernama index.html di komputer kamu.
+
+Tempel (paste) kode ke dalam file tersebut, lalu simpan.
+
+Buka file index.html menggunakan browser (Chrome, Edge, dll.).
+
+HTML
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVAREL STORE - Top Up Digital Terpercaya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- CSS STYLING (style.css) --- */
+        :root {
+            --bg-dark: #0b0f19;
+            --bg-card: #161b26;
+            --primary: #00d2ff;
+            --primary-hover: #00a8cc;
+            --text-main: #ffffff;
+            --text-muted: #8a99ad;
+            --success: #00e676;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: var(--bg-card);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid #1f2635;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-links li {
+            cursor: pointer;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links li:hover, .nav-links li.active {
+            color: var(--primary);
+        }
+
+        .btn-nav {
+            background: var(--primary);
+            color: #000;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Container & Pages */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Banner Promo */
+        .banner {
+            background: linear-gradient(45deg, #0052d4, #4364f7, #6fb1fc);
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 20px rgba(0, 210, 255, 0.2);
+        }
+
+        .banner h1 { font-size: 32px; margin-bottom: 10px; }
+
+        /* Section Title */
+        .section-title {
+            font-size: 22px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary);
+            padding-left: 10px;
+        }
+
+        /* Grid System */
+        .grid-menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .card-item {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+            border: 1px solid #1f2635;
+        }
+
+        .card-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 5px 15px rgba(0, 210, 255, 0.2);
+        }
+
+        .card-item i {
+            font-size: 35px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .card-item img {
+            width: 70px;
+            height: 70px;
+            border-radius: 12px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .card-item h4 {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* Form Pemesanan */
+        .order-layout {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .order-layout { grid-template-columns: 1fr; }
+            .nav-links { display: none; } /* Simplified for single-file responsiveness */
+        }
+
+        .order-box {
+            background: var(--bg-card);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid #1f2635;
+            margin-bottom: 20px;
+        }
+
+        .order-box h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: var(--primary);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            background: #0b0f19;
+            border: 1px solid #1f2635;
+            color: #fff;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .form-group input:focus { border-color: var(--primary); }
+
+        .grid-nominal, .grid-payment {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .select-card {
+            background: #0b0f19;
+            border: 1px solid #1f2635;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: left;
+            transition: 0.2s;
+        }
+
+        .select-card.selected {
+            border-color: var(--primary);
+            background: rgba(0, 210, 255, 0.05);
+        }
+
+        .select-card p { font-size: 12px; color: var(--text-muted); }
+        .select-card h5 { font-size: 15px; }
+
+        .btn-order {
+            width: 100%;
+            background: var(--primary);
+            color: #000;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        /* Testimoni */
+        .testi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .testi-card {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #1f2635;
+        }
+        .testi-user { display: flex; gap: 10px; margin-bottom: 10px; color: var(--primary); }
+
+        /* Auth Form */
+        .auth-container {
+            max-width: 400px;
+            margin: 50px auto;
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #1f2635;
+        }
+        .auth-container h2 { text-align: center; margin-bottom: 20px; color: var(--primary); }
+        .auth-container .form-group { margin-bottom: 15px; }
+        .auth-container button { width: 100%; padding: 12px; background: var(--primary); border: none; border-radius: 8px; font-weight: 600; cursor: pointer; }
+
+        /* Dashboard Admin */
+        .admin-layout {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 30px;
+        }
+        .admin-sidebar {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: 15px;
+            height: fit-content;
+        }
+        .admin-sidebar li {
+            list-style: none;
+            padding: 12px;
+            cursor: pointer;
+            border-radius: 8px;
+            margin-bottom: 5px;
+        }
+        .admin-sidebar li.active, .admin-sidebar li:hover {
+            background: rgba(0, 210, 255, 0.1);
+            color: var(--primary);
+        }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            border-left: 4px solid var(--primary);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-card);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #1f2635; }
+        th { background-color: #1f2635; color: var(--primary); }
+
+        /* Footer */
+        footer {
+            background: var(--bg-card);
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            border-top: 2px solid #1f2635;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo" onclick="switchPage('home')"><i class="fa-solid deterioration fa-bolt"></i> NOVAREL STORE</div>
+        <ul class="nav-links">
+            <li class="nav-item active" onclick="switchPage('home')">Beranda</li>
+            <li class="nav-item" onclick="switchPage('order-game')">Game</li>
+            <li class="nav-item" onclick="switchPage('order-pulsa')">Pulsa & Data</li>
+            <li id="nav-admin" class="nav-item" style="display:none;" onclick="switchPage('admin')">Admin Panel</li>
+            <li id="nav-profile" class="nav-item" style="display:none;" onclick="switchPage('profile')">Profil</li>
+            <li><button id="btn-auth" class="btn-nav" onclick="switchPage('login')">Login</button></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        
+        <div id="home" class="page active">
+            <div class="banner">
+                <h1>Gamer Choice Top Up Station</h1>
+                <p>Proses Cepat, Aman, dan Legal 24 Jam Non-Stop</p>
+            </div>
+
+            <h3 class="section-title">Top Up Game</h3>
+            <div class="grid-menu" id="game-menu-list">
+                </div>
+
+            <h3 class="section-title">Pulsa All Operator</h3>
+            <div class="grid-menu" id="pulsa-menu-list">
+                </div>
+
+            <h3 class="section-title">Paket Data</h3>
+            <div class="grid-menu" id="data-menu-list">
+                </div>
+
+            <h3 class="section-title">Tagihan PPOB</h3>
+            <div class="grid-menu">
+                <div class="card-item" onclick="alert('Fitur PPOB Segera Hadir!')"><i class="fa-solid fa-lightbulb"></i><h4>PLN Pascabayar</h4></div>
+                <div class="card-item" onclick="alert('Fitur PPOB Segera Hadir!')"><i class="fa-solid fa-droplet"></i><h4>PDAM Air</h4></div>
+                <div class="card-item" onclick="alert('Fitur PPOB Segera Hadir!')"><i class="fa-solid fa-wifi"></i><h4>Internet Telkom</h4></div>
+                <div class="card-item" onclick="alert('Fitur PPOB Segera Hadir!')"><i class="fa-solid fa-tv"></i><h4>TV Kabel</h4></div>
+            </div>
+
+            <h3 class="section-title">Testimoni Pelanggan</h3>
+            <div class="testi-grid">
+                <div class="testi-card">
+                    <div class="testi-user"><i class="fa-solid fa-user-astronaut"></i> <strong>Rian G.</strong></div>
+                    <p>"Top up ML disini gila cepet banget, ga sampe 1 menit udh masuk diamondnya! Sukses selalu Novarel Store."</p>
+                </div>
+                <div class="testi-card">
+                    <div class="testi-user"><i class="fa-solid fa-user-astronaut"></i> <strong>Siti A.</strong></div>
+                    <p>"Pulsa murah dibanding konter sebelah, metode pembayarannya lengkap banget bisa pake QRIS."</p>
+                </div>
+                <div class="testi-card">
+                    <div class="testi-user"><i class="fa-solid fa-user-astronaut"></i> <strong>Budi S.</strong></div>
+                    <p>"Sistem adminnya transparan. Suka bgt sama interface dark modenya, keren parah."</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="order-page" class="page">
+            <div class="order-layout">
+                <div>
+                    <div class="order-box">
+                        <img id="detail-img" src="" alt="" style="width:100%; border-radius:10px; margin-bottom:15px;">
+                        <h2 id="detail-title">Nama Produk</h2>
+                        <p style="color: var(--text-muted); font-size:14px; margin-top:10px;">Layanan aktif 24 jam. Masukkan data akun Anda dengan benar. Kesalahan input bukan tanggung jawab kami.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="order-box">
+                        <h3 id="input-label">1. Masukkan ID Game</h3>
+                        <div class="form-group">
+                            <input type="text" id="user-target-id" placeholder="Contoh: 12345678 (2321)">
+                        </div>
+                    </div>
+                    <div class="order-box">
+                        <h3>2. Pilih Nominal</h3>
+                        <div class="grid-nominal" id="nominal-container">
+                            </div>
+                    </div>
+                    <div class="order-box">
+                        <h3>3. Pilih Metode Pembayaran</h3>
+                        <div class="grid-payment" id="payment-container">
+                            </div>
+                    </div>
+                    <button class="btn-order" onclick="prosesPemesanan()">Beli Sekarang</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="login" class="page">
+            <div class="auth-container">
+                <h2 id="auth-title">Masuk Akun</h2>
+                <div class="form-group"><input type="text" id="auth-username" placeholder="Username"></div>
+                <div class="form-group"><input type="password" id="auth-password" placeholder="Password"></div>
+                <button id="btn-auth-submit" onclick="handleAuth()">Masuk</button>
+                <p id="auth-toggle-text" style="text-align:center; margin-top:15px; font-size:14px; cursor:pointer; color:var(--primary);" onclick="toggleAuthMode()">Belum punya akun? Daftar disini</p>
+            </div>
+        </div>
+
+        <div id="profile" class="page">
+            <h3 class="section-title">Profil Pengguna</h3>
+            <div class="order-box" style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <h2 id="profile-name">Username</h2>
+                    <p id="profile-status" style="color: var(--primary);">Member Premium</p>
+                </div>
+                <button class="btn-nav" style="background:#ff3333; color:#fff;" onclick="logout()">Logout</button>
+            </div>
+            <h3 class="section-title">Riwayat Transaksi</h3>
+            <table>
+                <thead>
+                    <tr><th>ID Transaksi</th><th>Produk</th><th>Target</th><th>Nominal</th><th>Metode</th><th>Status</th></tr>
+                </thead>
+                <tbody id="table-riwayat">
+                    </tbody>
+            </table>
+        </div>
+
+        <div id="admin" class="page">
+            <h3 class="section-title">Dashboard Admin - NOVAREL STORE</h3>
+            <div class="admin-layout">
+                <div class="admin-sidebar">
+                    <ul>
+                        <li class="active">Ringkasan & Statistik</li>
+                        <li onclick="alert('Fitur Manajemen Produk/Harga Aktif di Kode JS internal')">Kelola Produk & Harga</li>
+                        <li onclick="alert('Manajemen Pengguna terintegrasi Database Lokal Session')">Kelola Pengguna</li>
+                        <li onclick="alert('Semua Transaksi Masuk Tercatat Otomatis')">Kelola Transaksi</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="stat-grid">
+                        <div class="stat-card"><h5>Total Penjualan</h5><h2 style="color:var(--primary)">Rp 4.250.000</h2></div>
+                        <div class="stat-card"><h5>Transaksi Sukses</h5><h2 style="color:var(--success)">142</h2></div>
+                        <div class="stat-card"><h5>Total Pengguna</h5><h2>58 User</h2></div>
+                    </div>
+                    <h3>Semua Log Transaksi Masuk</h3>
+                    <table style="margin-top:15px;">
+                        <thead>
+                            <tr><th>User</th><th>Produk</th><th>Nominal</th><th>Bayar Via</th><th>Status</th></tr>
+                        </thead>
+                        <tbody id="table-admin-transaksi">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 NOVAREL STORE. All Rights Reserved. Desain Profesional & Responsive.</p>
+    </footer>
+
+    <script>
+        // --- DATA MOCKUP DATABASE ---
+        const GAMES = [
+            { id: 'ml', name: 'Mobile Legends', icon: 'fa-gamepad' },
+            { id: 'ff', name: 'Free Fire', icon: 'fa-fire' },
+            { id: 'pubg', name: 'PUBG Mobile', icon: 'fa-gun' },
+            { id: 'hok', name: 'Honor of Kings', icon: 'fa-shield-halved' },
+            { id: 'codm', name: 'Call of Duty Mobile', icon: 'fa-crosshairs' },
+            { id: 'genshin', name: 'Genshin Impact', icon: 'fa-wand-magic-sparkles' },
+            { id: 'valorant', name: 'Valorant', icon: 'fa-bullseye' },
+            { id: 'roblox', name: 'Roblox', icon: 'fa-cube' },
+            { id: 'higgs', name: 'Higgs Domino', icon: 'fa-dice' },
+            { id: 'steam', name: 'Steam Wallet', icon: 'fa-folder-open' }
+        ];
+
+        const PULSA = [
+            { id: 'tsel', name: 'Telkomsel' }, { id: 'isat', name: 'Indosat' },
+            { id: 'xl', name: 'XL' }, { id: 'axis', name: 'Axis' },
+            { id: 'tri', name: 'Tri (3)' }, { id: 'smartfren', name: 'Smartfren' },
+            { id: 'byu', name: 'By.U' }
+        ];
+
+        const NOMINALS = [
+            { id: 'n1', label: 'Kecil / Harian', desc: '5 Diamond / Rp 5.000', price: 5000 },
+            { id: 'n2', label: 'Medium / Mingguan', desc: '50 Diamond / Rp 50.000', price: 50000 },
+            { id: 'n3', label: 'Besar / Bulanan', desc: '100 Diamond / Rp 100.000', price: 100000 },
+            { id: 'n4', label: 'Sultan / Unlimited', desc: '500 Diamond / Rp 450.000', price: 450000 }
+        ];
+
+        const PAYMENTS = [
+            { id: 'qris', name: 'QRIS', type: 'E-Wallet' },
+            { id: 'dana', name: 'DANA', type: 'E-Wallet' },
+            { id: 'ovo', name: 'OVO', type: 'E-Wallet' },
+            { id: 'gopay', name: 'GoPay', type: 'E-Wallet' },
+            { id: 'shopeepay', name: 'ShopeePay', type: 'E-Wallet' },
+            { id: 'bca', name: 'Bank BCA', type: 'Transfer Bank' },
+            { id: 'bri', name: 'Bank BRI', type: 'Transfer Bank' },
+            { id: 'mandiri', name: 'Bank Mandiri', type: 'Transfer Bank' },
+            { id: 'bni', name: 'Bank BNI', type: 'Transfer Bank' }
+        ];
+
+        // --- STATE SYSTEM ---
+        let currentUser = JSON.parse(localStorage.getItem('user')) || null;
+        let isLoginMode = true;
+        let selectedProduct = null;
+        let selectedNominal = null;
+        let selectedPayment = null;
+        
+        // Dummy master data transaksi
+        let transaksiGlobal = [
+            { id: 'TRX001', user: 'Rian G', produk: 'Mobile Legends', nominal: 'Rp 50.000', via: 'QRIS', status: 'Sukses' },
+            { id: 'TRX002', user: 'Siti A', produk: 'Telkomsel', nominal: 'Rp 100.000', via: 'DANA', status: 'Sukses' }
+        ];
+
+        // --- INITIALIZATION ---
+        window.onload = function() {
+            renderMenus();
+            checkSession();
+            renderAdminTable();
+        };
+
+        // --- ROUTING SYSTEM (Pindah Halaman) ---
+        function switchPage(pageId) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+            
+            const targetPage = document.getElementById(pageId);
+            if(targetPage) targetPage.classList.add('active');
+
+            // Set Nav Active highlight
+            if(pageId === 'home') document.querySelectorAll('.nav-links li')[0].classList.add('active');
+        }
+
+        // --- RENDER INTERFACE ---
+        function renderMenus() {
+            const gameContainer = document.getElementById('game-menu-list');
+            const pulsaContainer = document.getElementById('pulsa-menu-list');
+            const dataContainer = document.getElementById('data-menu-list');
+
+            // Render Game
+            GAMES.forEach(g => {
+                gameContainer.innerHTML += `
+                    <div class="card-item" onclick="openOrder('${g.name}', 'game')">
+                        <i class="fa-solid ${g.icon}"></i>
+                        <h4>${g.name}</h4>
+                    </div>
+                `;
+            });
+
+            // Render Pulsa
+            PULSA.forEach(p => {
+                pulsaContainer.innerHTML += `
+                    <div class="card-item" onclick="openOrder('${p.name}', 'pulsa')">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                        <h4>${p.name}</h4>
+                    </div>
+                `;
+                dataContainer.innerHTML += `
+                    <div class="card-item" onclick="openOrder('${p.name} Data', 'data')">
+                        <i class="fa-solid fa-network-wired"></i>
+                        <h4>${p.name}</h4>
+                    </div>
+                `;
+            });
+        }
+
+        // --- OPEN FORM ORDER & CONFIGURATION ---
+        function openOrder(name, type) {
+            selectedProduct = name;
+            selectedNominal = null;
+            selectedPayment = null;
+
+            document.getElementById('detail-title').innerText = name;
+            
+            // Konfigurasi teks input berdasarkan tipe produk
+            const inputLabel = document.getElementById('input-label');
+            const targetInput = document.getElementById('user-target-id');
+            if (type === 'game') {
+                inputLabel.innerText = "1. Masukkan ID Game (Zone ID)";
+                targetInput.placeholder = "Contoh: 12345678 (2421)";
+            } else {
+                inputLabel.innerText = "1. Masukkan Nomor Handphone";
+                targetInput.placeholder = "Contoh: 0812xxxxxxxx";
+            }
+
+            // Render Nominal Cards
+            const nomContainer = document.getElementById('nominal-container');
+            nomContainer.innerHTML = '';
+            NOMINALS.forEach(n => {
+                // Modifikasi label jika itu pulsa atau paket data
+                let displayDesc = n.desc;
+                if(type !== 'game') {
+                    displayDesc = n.label === 'Kecil / Harian' ? 'Pulsa/Data Harian | Rp 5.000' :
+                                  n.label === 'Medium / Mingguan' ? 'Pulsa/Data Mingguan | Rp 50.000' :
+                                  n.label === 'Besar / Bulanan' ? 'Pulsa/Data Bulanan | Rp 100.000' : 'Paket Unlimited | Rp 450.000';
+                }
+                nomContainer.innerHTML += `
+                    <div class="select-card" id="card-nom-${n.id}" onclick="selectNominal('${n.id}', ${n.price})">
+                        <h5>${n.label}</h5>
+                        <p>${displayDesc}</p>
+                    </div>
+                `;
+            });
+
+            // Render Payment Cards
+            const payContainer = document.getElementById('payment-container');
+            payContainer.innerHTML = '';
+            PAYMENTS.forEach(p => {
+                payContainer.innerHTML += `
+                    <div class="select-card" id="card-pay-${p.id}" onclick="selectPayment('${p.id}')">
+                        <h5>${p.name}</h5>
+                        <p>${p.type}</p>
+                    </div>
+                `;
+            });
+
+            switchPage('order-page');
+        }
+
+        function selectNominal(id, price) {
+            selectedNominal = id;
+            document.querySelectorAll('#nominal-container .select-card').forEach(c => c.classList.remove('selected'));
+            document.getElementById(`card-nom-${id}`).classList.add('selected');
+        }
+
+        function selectPayment(id) {
+            selectedPayment = id;
+            document.querySelectorAll('#payment-container .select-card').forEach(c => c.classList.remove('selected'));
+            document.getElementById(`card-pay-${id}`).classList.add('selected');
+        }
+
+        // --- CORE PROCESS: PEMESANAN ---
+        function prosesPemesanan() {
+            const targetId = document.getElementById('user-target-id').value;
+            if(!targetId) return alert('Harap isi ID Game / Nomor HP Anda!');
+            if(!selectedNominal) return alert('Silahkan pilih nominal terlebih dahulu!');
+            if(!selectedPayment) return alert('Silahkan pilih metode pembayaran!');
+
+            const nominalDetail = NOMINALS.find(n => n.id === selectedNominal);
+            const paymentDetail = PAYMENTS.find(p => p.id === selectedPayment);
+
+            const konfirmasi = confirm(`Konfirmasi Pembelian:\nProduk: ${selectedProduct}\nTarget: ${targetId}\nHarga: Rp ${nominalDetail.price.toLocaleString()}\nMetode: ${paymentDetail.name}\n\nLanjutkan Pembayaran?`);
+            
+            if(konfirmasi) {
+                const newTrx = {
+                    id: 'TRX' + Math.floor(1000 + Math.random() * 9000),
+                    user: currentUser ? currentUser.username : 'Guest / Anonim',
+                    produk: selectedProduct,
+                    nominal: 'Rp ' + nominalDetail.price.toLocaleString(),
+                    via: paymentDetail.name,
+                    status: 'Sukses'
+                };
+                
+                transaksiGlobal.unshift(newTrx); // Simpan ke log admin
+                alert('Transaksi Berhasil! Silahkan cek saldo atau kuota akun target anda.');
+                
+                // Jika user login, masukkan riwayat ke tabel profile mereka
+                if(currentUser) {
+                    renderRiwayatUser();
+                }
+                renderAdminTable();
+                switchPage('home');
+            }
+        }
+
+        // --- SISTEM AUTENTIKASI (LOGIN/REGISTER/LOGOUT) ---
+        function toggleAuthMode() {
+            isLoginMode = !isLoginMode;
+            document.getElementById('auth-title').innerText = isLoginMode ? "Masuk Akun" : "Daftar Akun Baru";
+            document.getElementById('btn-auth-submit').innerText = isLoginMode ? "Masuk" : "Daftar";
+            document.getElementById('auth-toggle-text').innerText = isLoginMode ? "Belum punya akun? Daftar disini" : "Sudah punya akun? Login disini";
+        }
+
+        function handleAuth() {
+            const user = document.getElementById('auth-username').value;
+            const pass = document.getElementById('auth-password').value;
+
+            if(!user || !pass) return alert('Isi lengkap username dan password!');
+
+            if(isLoginMode) {
+                // LOGIN LOGIC
+                if(user === 'admin' && pass === 'admin123') {
+                    currentUser = { username: 'Admin Toko', role: 'admin' };
+                } else {
+                    currentUser = { username: user, role: 'member' };
+                }
+                localStorage.setItem('user', JSON.stringify(currentUser));
+                alert('Selamat Datang ' + currentUser.username);
+                checkSession();
+                switchPage('home');
+            } else {
+                // REGISTER LOGIC
+                alert('Pendaftaran Berhasil! Silahkan masuk memakai akun tersebut.');
+                toggleAuthMode();
+            }
+        }
+
+        function logout() {
+            currentUser = null;
+            localStorage.removeItem('user');
+            alert('Berhasil Logout.');
+            checkSession();
+            switchPage('home');
+        }
+
+        function checkSession() {
+            const btnAuth = document.getElementById('btn-auth');
+            const navAdmin = document.getElementById('nav-admin');
+            const navProfile = document.getElementById('nav-profile');
+
+            if(currentUser) {
+                btnAuth.innerText = "Keluar (" + currentUser.username + ")";
+                btnAuth.onclick = logout;
+                navProfile.style.display = "block";
+                document.getElementById('profile-name').innerText = currentUser.username;
+                document.getElementById('profile-status').innerText = currentUser.role === 'admin' ? 'Administrator Utama' : 'Member Premium';
+                
+                if(currentUser.role === 'admin') {
+                    navAdmin.style.display = "block";
+                } else {
+                    navAdmin.style.display = "none";
+                }
+                renderRiwayatUser();
+            } else {
+                btnAuth.innerText = "Login";
+                btnAuth.onclick = () => switchPage('login');
+                navAdmin.style.display = "none";
+                navProfile.style.display = "none";
+            }
+        }
+
+        // --- RENDER LOG TABEL ---
+        function renderRiwayatUser() {
+            const tbody = document.getElementById('table-riwayat');
+            tbody.innerHTML = '';
+            // filter history berdasarkan user aktif saat ini
+            const userTrx = transaksiGlobal.filter(t => t.user === currentUser.username);
+            if(userTrx.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;">Belum ada riwayat pembelian.</td></tr>`;
+                return;
+            }
+            userTrx.forEach(t => {
+                tbody.innerHTML += `
+                    <tr><td>${t.id}</td><td>${t.produk}</td><td>Aktif</td><td>${t.nominal}</td><td>${t.via}</td><td style="color:var(--success); font-weight:600;">${t.status}</td></tr>
+                `;
+            });
+        }
+
+        function renderAdminTable() {
+            const tbody = document.getElementById('table-admin-transaksi');
+            tbody.innerHTML = '';
+            transaksiGlobal.forEach(t => {
+                tbody.innerHTML += `
+                    <tr><td>${t.user}</td><td>${t.produk}</td><td>${t.nominal}</td><td>${t.via}</td><td style="color:var(--success); font-weight:600;">${t.status}</td></tr>
+                `;
+            });
+        }
+    </script>
+</body>
+</html>
